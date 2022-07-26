@@ -3,7 +3,7 @@ var Recognition = new SpeechRecognition();
 function start() {
     document.getElementById("textbox").innerHTML = "";
     Recognition.start();
-}
+}   
 
 function speak() {
     var synth = window.speechSynthesis;
