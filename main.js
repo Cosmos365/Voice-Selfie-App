@@ -3,15 +3,6 @@ var Recognition = new SpeechRecognition();
 function start() {
     document.getElementById("textbox").innerHTML = "";
     Recognition.start();
-}   
-
-function speak() {
-    var synth = window.speechSynthesis;
-    Speak_data = document.getElementById("textbox").value; 
-    var utterthis = new SpeechSynthesisUtterance(Speak_data);
-    synth.speak(utterthis);
-    Webcam.attach(camera);
-    console.log("yes");
 }
 
 Recognition.onresult = function(event) {
@@ -20,6 +11,15 @@ Recognition.onresult = function(event) {
     console.log(content);
     document.getElementById("textbox").innerHTML = content;
     speak();
+}
+
+function speak() {
+    var synth = window.speechSynthesis;
+    Speak_data = document.getElementById("textbox").value; 
+    var utterthis = new SpeechSynthesisUtterance(Speak_data);
+    synth.speak(utterthis);
+    Webcam.attach(camera);
+    console.log("yes");
 }
 
 Webcam.set({
